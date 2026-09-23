@@ -46,6 +46,8 @@ f(x) = a₀/2 + Σ [ aₙ·cos(nx) + bₙ·sin(nx) ]
 
 ## Screenshots / examples
 
+![Alt text](example_screenshot.png?raw=true "Optional Title")
+
 Default preset (sinc-like coefficients):
 
 ```
@@ -82,56 +84,7 @@ Just run it — no installation needed.
 *   [Rust](https://rustup.rs) (stable, 1.75+)
     
 *   Linux only: `sudo apt install libgl1-mesa-dev libx11-dev libxcursor-dev libxrandr-dev libxi-dev libxkbcommon-dev libwayland-dev libgtk-3-dev`
-    
 
-### Build & run (debug)
-
-```bash
-cargo run
-```
-
-### Build an optimized standalone executable (release)
-
-```bash
-cargo build --release
-```
-
-The binary is standalone — Rust is compiled to native machine code and the  
-only runtime dependencies are the OS's standard graphics libraries. End users  
-do **not** need Rust installed. You can just copy the executable to them.
-The output is at:
-| Platform | Path |
-| --- | --- |
-| Windows | `target\release\fourier-visualizer.exe` |
-| macOS | `target/release/fourier-visualizer` |
-| Linux | `target/release/fourier-visualizer` |
-
-### Building for Windows from Linux/macOS (cross-compile)
-
-```bash
-rustup target add x86_64-pc-windows-gnu
-cargo build --release --target x86_64-pc-windows-gnu
-```
-
-Or on GitHub Actions, use the built-in matrix:
-
-```yaml
-strategy:
-  matrix:
-    os: [windows-latest, macos-latest, ubuntu-latest]
-```
-
-### Smaller / harder-to-flag binaries (optional)
-
-Add to `Cargo.toml` for a smaller, stripped release binary:
-
-```toml
-[profile.release]
-lto = true
-codegen-units = 1
-strip = true
-panic = "abort"
-```
 
 ## Dependencies
 
@@ -143,20 +96,6 @@ panic = "abort"
     expressions into fast closures via `Expr::bind("n")`)
     
 
-## Cargo.toml example
-
-```toml
-[package]
-name = "fourier-visualizer"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-eframe = "0.29"
-egui_plot = "0.29"
-meval = "0.2"
-```
-
 ## Architecture notes
 
 *   `compile_coefficients()` parses the three input strings once and stores  
@@ -167,8 +106,3 @@ meval = "0.2"
     and large term counts stay smooth.
     
 *   Repainting is only requested while animating, so the app idles at ~0% CPU.
-    
-
-## License
-
-MIT (or choose your own)
