@@ -68,17 +68,10 @@ Other examples you can paste in:
 Download the latest release for your platform from the  
 [Releases page](../../releases):
 
-*   Windows: `fourier-visualizer.exe`
+*   Windows: `fourier_visualizer.exe`
 
 Just run it — no installation needed.
 
-## Building from source
-
-### Prerequisites
-
-*   [Rust](https://rustup.rs) (stable, 1.75+)
-    
-*   Linux only: `sudo apt install libgl1-mesa-dev libx11-dev libxcursor-dev libxrandr-dev libxi-dev libxkbcommon-dev libwayland-dev libgtk-3-dev`
 
 
 ## Dependencies
