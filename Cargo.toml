@@ -1,0 +1,9 @@
+[package]
+name = "fourier_visualizer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.33"
+egui_plot = "0.34"
+meval = "0.2"
