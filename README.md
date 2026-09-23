@@ -4,8 +4,8 @@ A cross-platform desktop app for visualizing how Fourier series converge to a
 function, term by term, with real-time animation.
 Built in Rust with [eframe/egui](https://github.com/emilk/egui) for the UI and  
 [meval](https://github.com/ebrian/meval-rs) for parsing math expressions.
-  
-![Fourier Series Visualizer](screenshot.png)
+
+Another vibe-coded project...
 
 ## What it does
 
@@ -46,7 +46,7 @@ f(x) = a₀/2 + Σ [ aₙ·cos(nx) + bₙ·sin(nx) ]
 
 ## Screenshots / examples
 
-![Alt text](example_screenshot.png?raw=true "Optional Title")
+![Example_step_function_screenshot](example_screenshot.png?raw=true "Example step function")
 
 Default preset (sinc-like coefficients):
 
@@ -69,11 +69,6 @@ Download the latest release for your platform from the
 [Releases page](../../releases):
 
 *   Windows: `fourier-visualizer.exe`
-    
-*   macOS: `FourierVisualizer.app`
-    
-*   Linux: `fourier-visualizer`
-    
 
 Just run it — no installation needed.
 
